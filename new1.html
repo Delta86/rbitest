@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/unstable/pyscript.js"></script>
+    </head>
+    <body>
+
+
+<py-script>
+import pyautogui    
+import time         
+
+message1 = input('What do you want to type? ')
+
+# ONE -- Get Cursor Location
+time.sleep(1)
+print(pyautogui.position())
+
+# TWO -- Click
+pyautogui.click(528, 1060)      #click MS Word icon
+time.sleep(4)                   #wait for Word to load
+pyautogui.click(354, 283)       #click 'New Document'
+
+# THREE -- Type Letters
+pyautogui.typewrite(message1)
+pyautogui.typewrite(" waddup?")
+
+# FOUR -- Press Keyboard Buttons
+pyautogui.press('enter')
+pyautogui.typewrite(message1 + " you're lookin' good son!") 
+  
+</py-script>
